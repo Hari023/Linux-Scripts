@@ -1,3 +1,12 @@
+Create Ec2 linux instance
+Donload AWS Cli
+
+AWS Configure 
+User Id and password
+
+
+open vi editor follwed by name of script
+
 #!/bin/bash
 
 
@@ -34,6 +43,10 @@ aws lambda list-functions
 # List IAM Users
 echo "Print IAM User"
 aws iam list-users
+
+save and quit 
+
+To run the script ./(name of the script)
 
 #Cron job (it will automatically run the above scripts every day 10 am)
 to create cron tab
