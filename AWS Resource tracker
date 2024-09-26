@@ -50,5 +50,5 @@ To run the script ./(name of the script)
 
 #Cron job (it will automatically run the above scripts every day 10 am)
 to create cron tab
-cron tab -e
+crontab -e
 10 0 * * * aws_resource_tracter.sh
