@@ -1,0 +1,41 @@
+#!/bin/bash
+
+
+########################
+# Author: Hariharan
+# Date: 26th- September
+# Version: v1
+#
+# This script will report the AWS resourse usage
+###########################
+#
+# AWS S3
+# AWS EC2
+# AWS Lambda
+# AWS IAM
+#(Use aws documents for CLI commands)
+
+#It will run in a debug mode
+set -x 
+
+#list S3 buckets
+echo "print list of s3 buckets"
+aws s3 ls
+
+# List EC2 Instance
+echo "Print list of EC2 Instance ID Alone"
+#jg - represents jason 
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+
+# List lambda functions
+echo "Print list of lambda Functions"
+aws lambda list-functions
+
+# List IAM Users
+echo "Print IAM User"
+aws iam list-users
+
+#Cron job (it will automatically run the above scripts every day 10 am)
+to create cron tab
+cron tab -e
+10 0 * * * aws_resource_tracter.sh
